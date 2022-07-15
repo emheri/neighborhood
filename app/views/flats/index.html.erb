@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Flats</h1>
+
+<div id="flats">
+  <%= link_to "New flat", new_flat_path, class: "btn btn-primary", data: { turbo_frame: "remote_modal" } %>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Owner</th>
+        <th scope="col">Name</th>
+        <th scope="col">Latitude</th>
+        <th scope="col">Longitude</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @flats.each do |flat| %>
+        <tr id="flat_<%= flat.id %>", scope="row">
+          <%= render flat %>
+        <tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

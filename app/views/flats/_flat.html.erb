@@ -1,0 +1,9 @@
+<td style="width: 15%"><%= flat.user.name %></td>
+<td style="width: 15%"><%= flat.name %></td>
+<td style="width: 15%"><%= flat.latitude %></td>
+<td style="width: 15%"><%= flat.longitude %></td>
+<td style="width: 50%">
+  <%= link_to "Show", flat, class: "btn btn-secondary", data: { turbo_frame: "remote_modal" } %>
+  <%= link_to "Edit", edit_flat_path(flat), class: "btn btn-success", data: { turbo_frame: "remote_modal" } %>
+  <%= link_to "Delete", flat, class: "btn btn-danger", method: :delete, data: { "turbo-method": :delete, turbo_confirm: "Are you sure?" } %>
+</td>
