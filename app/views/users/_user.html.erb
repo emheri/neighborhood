@@ -1,0 +1,7 @@
+<td style="width: 25%"><%= user.name %></td>
+<td style="width: 25%"><%= user.email %></td>
+<td style="width: 50%">
+  <%= link_to "Show", user, class: "btn btn-secondary", data: { turbo_frame: "remote_modal" } %>
+  <%= link_to "Edit", edit_user_path(user), class: "btn btn-success", data: { turbo_frame: "remote_modal" } %>
+  <%= link_to "Delete", user, class: "btn btn-danger", method: :delete, data: { "turbo-method": :delete, turbo_confirm: "Are you sure?" } %>
+</td>
