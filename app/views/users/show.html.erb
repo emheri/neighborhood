@@ -1,4 +1,23 @@
-<%= render "remote_modal", title: "" do %>
-  <p><%= @user.name%></p>
-  <p><%= @user.email%></p>
+<%= render "remote_modal", title: "#{@user.name} (#{@user.email})" do %>
+<h3>Flats</h3>
+<div id="users" class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Latitude</th>
+        <th scope="col">Longitude</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user.flats.each do |flat| %>
+        <tr id="flat_<%= flat.id %>", scope="row">
+          <td style="width: 15%"><%= flat.name %></td>
+          <td style="width: 15%"><%= flat.latitude %></td>
+          <td style="width: 15%"><%= flat.longitude %></td>
+        <tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <% end %>

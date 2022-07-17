@@ -1,9 +1,13 @@
-<p style="color: green"><%= notice %></p>
+<div class="card-header p-3">
+  <h5 class="mb-0">Users</h5>
+</div>
 
-<h1>Users</h1>
-
-<div id="users">
+<div class="text-end p-3">
+  <p style="color: green"><%= notice %></p>
   <%= link_to "New user", new_user_path, class: "btn btn-primary", data: { turbo_frame: "remote_modal" } %>
+</div>
+
+<div id="users" class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
   <table class="table">
     <thead>
       <tr>
@@ -20,7 +24,8 @@
       <% end %>
     </tbody>
   </table>
-  
-</div>
+<div>
+
+
 
 
