@@ -23,7 +23,6 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
 
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
@@ -31,6 +30,7 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "rspec-rails"
+  gem 'rspec-collection_matchers'
   gem "factory_bot_rails"
   gem "faker"
 end
