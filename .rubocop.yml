@@ -1,0 +1,13 @@
+require: rubocop-rails
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/**/*'
+    - 'bin/*'
+    - 'config/environments/development.rb'
+Style/Documentation:
+  Enabled: false
+Naming/VariableNumber:
+  Enabled: false
+Metrics/BlockLength:
+  Max: 100

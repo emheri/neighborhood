@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class FlatsController < ApplicationController
-  before_action :set_flat, only: %i[ show edit update destroy ]
+  before_action :set_flat, only: %i[show edit update destroy]
 
   # GET /flats
   def index
@@ -23,7 +25,7 @@ class FlatsController < ApplicationController
 
     respond_to do |format|
       if @flat.save
-        format.html { redirect_to flats_path, notice: "Flat was successfully created." }
+        format.html { redirect_to flats_path, notice: t('flat-created') }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.turbo_stream { render :form_update, status: :unprocessable_entity }
@@ -34,7 +36,7 @@ class FlatsController < ApplicationController
   # PATCH/PUT /flats/1
   def update
     if @flat.update(flat_params)
-      format.html { redirect_to flats_path, notice: "Flat was successfully updated." }
+      format.html { redirect_to flats_path, notice: t('flat-updated') }
     else
       format.html { render :edit, status: :unprocessable_entity }
       format.turbo_stream { render :form_update, status: :unprocessable_entity }
@@ -46,18 +48,18 @@ class FlatsController < ApplicationController
     @flat.destroy
 
     respond_to do |format|
-      format.html { redirect_to flats_path, notice: "Flat was successfully destroyed." }
+      format.html { redirect_to flats_path, notice: t('flat-destroyed') }
       format.json { head :no_content }
     end
   end
 
   private
-    def set_flat
-      @flat = Flat.find(params[:id])
-    end
 
-    def flat_params
-      params.require(:flat).permit(:user_id, :name, :latitude, :longitude)
-    end
-    
+  def set_flat
+    @flat = Flat.find(params[:id])
+  end
+
+  def flat_params
+    params.require(:flat).permit(:user_id, :name, :latitude, :longitude)
+  end
 end

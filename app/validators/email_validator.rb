@@ -8,4 +8,3 @@ class EmailValidator < ActiveModel::EachValidator
       value && value.length < MAX_LENGTH && value =~ /\A[^@\s]+@[^@\s.]+\.+[^@\s]+\z/i
   end
 end
-    

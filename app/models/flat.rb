@@ -1,5 +1,9 @@
+# frozen_string_literal: true
+
 class Flat < ApplicationRecord
-  scope :within_radius, -> (lat, lng, meter) { where('earth_box(ll_to_earth(?, ?), ?) @> ll_to_earth(latitude, longitude)', lat, lng, meter) }
+  scope :within_radius, lambda { |lat, lng, meter|
+                          where('earth_box(ll_to_earth(?, ?), ?) @> ll_to_earth(latitude, longitude)', lat, lng, meter)
+                        }
 
   belongs_to :user
 

@@ -31,3 +31,9 @@
 
 en:
   hello: "Hello world"
+  flat-created: "Flat was successfully created"
+  flat-updated: "Flat was successfully updated"
+  flat-destroyed: "Flat was successfully destroyed"
+  user-created: "User was successfully created"
+  user-updated: "User was successfully updated"
+  user-destroyed: "User was successfully destroyed"

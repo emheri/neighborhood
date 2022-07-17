@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :neighborhood do
     name { Faker::Name.name }
@@ -13,4 +15,3 @@ FactoryBot.define do
     end
   end
 end
-  
